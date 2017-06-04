@@ -1,7 +1,12 @@
 
 var events = require('events');
 
+const EVENT_KEYBOARD_INPUT = 'KeyboardInput';
+
 class UserInputHandler extends events.EventEmitter{
+	static get EVENT_KEYBOARD_INPUT(){
+		return EVENT_KEYBOARD_INPUT;
+    }
 	constructor(){
 		super();
 		console.log('Init user input.');
@@ -9,7 +14,7 @@ class UserInputHandler extends events.EventEmitter{
 		var that = this;
 		process.stdin.addListener("data", function(d) {
 		    var word = d.toString().trim();
-		    that.emit('KeyboardInput', word);
+		    that.emit(EVENT_KEYBOARD_INPUT, word);
 		  });	
 	}
 

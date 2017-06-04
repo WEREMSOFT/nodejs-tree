@@ -20,8 +20,6 @@ menu.addChild(langMenu);
 menu.addChild(new MenuItem('Exit'));
 
 controller.setCurrentOption(langMenu);
-userInputHandler.addListener('KeyboardInput', controller.keboardInputHandler);
-controlle
 controller.update();
 
 
